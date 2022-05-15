@@ -1,11 +1,12 @@
 import React from 'react';
 import Menu from '../components/menu/Menu';
+import Sobre from '../components/sobre/Sobre';
 
 export default function Home() {
   return (
     <>
       <Menu />
-      <h1>Pagina SOBRE</h1>
+      <Sobre />
     </>
   );
 }
