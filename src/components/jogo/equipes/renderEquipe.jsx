@@ -4,23 +4,14 @@ import FormEquipe from './formEquipe';
 
 export default function RenderEquipe() {
   const [list, setList] = useState([]);
-  const inputOn = document.querySelector('#input-name');
-  const btnOn = document.querySelector('#btn-input');
 
-  const handleAddItemToList = (newStudent) => {
-    if (list.length <= 3) {
-      setList([...list, newStudent]);
-      inputOn.disabled = false;
-      btnOn.disabled = false;
-    } else {
-      inputOn.disabled = true;
-      btnOn.disabled = false;
-    }
+  const handleAddItemToList = async (newStudent) => {
+    setList([...list, newStudent]);
   };
 
   return (
     <>
-      <FormEquipe handleAddItemToList={handleAddItemToList} />
+      <FormEquipe  handleAddItemToList={handleAddItemToList} />
       <ListaEquipe list={list}  />
     </>
   );
