@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import BotaoPlayStyled from '../../styles/home/botao_play';
+import BotaoPlayStyled from '../../styles/home/botaoPlay';
 
-export default function Botao_play() {
+export default function BotaoPlay() {
 
   const pages = useNavigate();
   
