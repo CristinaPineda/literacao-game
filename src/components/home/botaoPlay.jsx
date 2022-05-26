@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BotaoPlayStyled from '../../styles/home/botaoPlay';
+import GameContext from '../../context/gameContext';
 
 export default function BotaoPlay() {
+  const { randomElement } = useContext(GameContext);
 
   const pages = useNavigate();
-  
+
+  const goPages = async () => {
+    await randomElement();
+    pages('/jogo');
+  };
+
   const goGame = () => {
-    const goPages = () => pages('/jogo');
     return (
       <BotaoPlayStyled>
         <button onClick={goPages} className="play">Jogar</button>

@@ -1,21 +1,17 @@
-import React, { useEffect, useState }from 'react';
-import data from '../../../assets/data/data.json';
+import React, { useContext, useState }from 'react';
+import GameContext from '../../../context/gameContext';
 
 export default function Jogos() {
-  const [question, setQuestion] = useState();
-  const [dataLista, setDataLista] = useState([]);
+  const { question } = useContext(GameContext);
+  const [dataLista] = useState([]);
+  const [setListDicas] = useState([]);
   const [index, setIndex] = useState(0);
-  const [btnJogar, setBtnJogar] = useState(false);
-
-  useEffect(() => {
-    const randomElement = data[Math.floor(Math.random() * data.length)];
-    setQuestion(randomElement);
-  }, []);
-
+  const [btnJogar] = useState(false);
+  
   const handleClick = async() => {
     setBtnJogar(true);
     setDataLista(question.dicas);
-  };
+  };  };
 
   const handleClickDicas = async() => {
     setIndex(index + 1);
@@ -27,7 +23,7 @@ export default function Jogos() {
       <button disabled={btnJogar} onClick={handleClick}>Jogar</button>
       <button onClick={handleClickDicas} className="maisDicas">+</button>
       <ul>
-        {dataLista.map(item => (<li key={item}>{item}</li>))}
+        {/* {listDicas.map(item => (<li key={item}>{item}</li>))} */}
       </ul>
     </>
   );

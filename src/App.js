@@ -1,11 +1,14 @@
 import React from 'react';
 import Route from './routes/routes';
+import GameProvider from './context/gameProvider';
 
 function App() {
   return (
-    <div className="App">
-      <Route />
-    </div>
+    <GameProvider>
+      <div className="App">
+        <Route />
+      </div>
+    </GameProvider>
   );
 }
 
