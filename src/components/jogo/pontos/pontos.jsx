@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import GameContext from '../../../context/gameContext';
 
 export default function Pontos() {
-  const [pontos] = useState(100);
+  const { pontos } = useContext(GameContext);
 
   return (
     <div className="divPontos">
