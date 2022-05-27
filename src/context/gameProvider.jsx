@@ -6,7 +6,6 @@ import data from '../assets/data/data.json';
 
 function GameProvider({children}) {
   const [question, setQuestion] = useState({});
-  const [pontos, setPontos] = useState(100);
 
   const randomElement = () => {
     const initial = data[Math.floor(Math.random() * data.length)];
@@ -16,8 +15,6 @@ function GameProvider({children}) {
   const context = {
     question,
     randomElement,
-    pontos,
-    setPontos,
   };
 
 

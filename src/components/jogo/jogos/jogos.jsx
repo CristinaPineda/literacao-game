@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState }from 'react';
+import PropTypes from 'prop-types';
 import GameContext from '../../../context/gameContext';
 
 export default function Jogos() {
-  const { question, pontos, setPontos } = useContext(GameContext);
+  const { question } = useContext(GameContext);
   const [index, setIndex] = useState(0);
   const [btnJogar, setBtnJogar] = useState(false);
   const [btnDicas, setBtnDicas] = useState(false);
   const [listDicas, setListDicas] = useState();
+  const [pontos, setPontos] = useState(100);
   const dataLista = question.dicas;
 
   useEffect(() => {
@@ -44,6 +46,10 @@ export default function Jogos() {
 
   return (
     <>
+      <div className="divPontos">
+        <p>Pontos:</p>
+        <p className="pontuacao">{pontos}</p>
+      </div>
       <button disabled={btnJogar} onClick={handleClick}>Jogar</button>
       <button disabled={btnDicas} onClick={handleClickDicas} className="maisDicas">+</button>
       <div>
@@ -52,3 +58,7 @@ export default function Jogos() {
     </>
   );
 }
+
+Jogos.propTypes = {
+  pontos: PropTypes.number,
+};

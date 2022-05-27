@@ -1,13 +1,8 @@
-import React, { useContext } from 'react';
-import GameContext from '../../../context/gameContext';
+// import React from 'react';
 
-export default function Pontos() {
-  const { pontos } = useContext(GameContext);
+// export default function Pontos() {
 
-  return (
-    <div className="divPontos">
-      <p>Pontos:</p>
-      <p className="pontuacao">{pontos}</p>
-    </div>
-  );
-}
+//   return (
+
+//   );
+// }
