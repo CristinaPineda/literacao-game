@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useState }from 'react';
 import PropTypes from 'prop-types';
 import GameContext from '../../../context/gameContext';
+import DivJogosStyled from '../../../styles/jogo/jogos/jogos';
 
 export default function Jogos() {
   const { question } = useContext(GameContext);
   const [index, setIndex] = useState(0);
   const [btnJogar, setBtnJogar] = useState(false);
-  const [btnDicas, setBtnDicas] = useState(false);
+  const [btnDicas, setBtnDicas] = useState(true);
   const [listDicas, setListDicas] = useState();
   const [pontos, setPontos] = useState(100);
   const dataLista = question.dicas;
@@ -33,6 +34,7 @@ export default function Jogos() {
   const handleClick = async() => {
     console.log(dataLista);
     setBtnJogar(true);
+    setBtnDicas(false);
     console.log(listDicas);
     handleLimit();
   };
@@ -45,17 +47,17 @@ export default function Jogos() {
   };
 
   return (
-    <>
+    <DivJogosStyled>
       <div className="divPontos">
-        <p>Pontos:</p>
+        <p>Pontos da questão:</p>
         <p className="pontuacao">{pontos}</p>
       </div>
-      <button disabled={btnJogar} onClick={handleClick}>Jogar</button>
-      <button disabled={btnDicas} onClick={handleClickDicas} className="maisDicas">+</button>
       <div>
+        <button disabled={btnJogar} onClick={handleClick}>Jogar</button>
+        <button disabled={btnDicas} onClick={handleClickDicas} className="maisDicas">+</button>
         { btnJogar == true? maps(): ''}
       </div>
-    </>
+    </DivJogosStyled>
   );
 }
 

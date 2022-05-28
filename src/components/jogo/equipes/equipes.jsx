@@ -1,6 +1,5 @@
 import React from 'react';
 import RenderEquipe from './renderEquipe';
-// import Pontos from '../pontos/pontos';
 import DivListStyled from '../../../styles/jogo/equipes/listaEquipes';
 import Jogos from '../../../components/jogo/jogos/jogos';
 
@@ -13,7 +12,6 @@ export default function Equipes() {
           <RenderEquipe />
         </div>
         <div className="pontosEquipe1">
-          {/* <Pontos /> */}
         </div>
         <Jogos />
       </div>
@@ -23,7 +21,6 @@ export default function Equipes() {
           <RenderEquipe />
         </div>
         <div className="pontosEquipe2">
-          {/* <Pontos /> */}
         </div>
         <Jogos />
       </div>
