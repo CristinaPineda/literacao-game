@@ -10,7 +10,9 @@ export default function Jogos() {
   const [listDicas, setListDicas] = useState();
   const [pontos, setPontos] = useState(100);
   const [questionEquipe, setQuestionEquipe] = useState(0);
+  const [input, setInput] = useState('');
   const dataLista = question[questionEquipe].dicas;
+  const responseQuestion = question[questionEquipe].resposta;
 
   useEffect(() => {
     setListDicas([dataLista[index]]);
@@ -49,6 +51,19 @@ export default function Jogos() {
     handleLimit();
   };
 
+  const verifyResponse = () => {
+    if(input == responseQuestion) {
+      console.log('certo');
+    } else {
+      console.log('errado');
+    }
+  };
+
+  const handleChangeInput = (event) => {
+    const inputs = event.target.value;
+    setInput(inputs);
+  };
+
   return (
     <DivJogosStyled>
       <div className="divPontos">
@@ -59,6 +74,10 @@ export default function Jogos() {
         <button disabled={btnJogar} onClick={handleClick}>Jogar</button>
         <button disabled={btnDicas} onClick={handleClickDicas} className="maisDicas">+</button>
         { btnJogar == true? listMap(): ''}
+      </div>
+      <div className="divResposta">
+        <input type="text" className="inputResposta" placeholder="Digite sua resposta aqui:" onChange={handleChangeInput} />
+        <button className="btnResposta" onClick={verifyResponse}>Responder</button>
       </div>
     </DivJogosStyled>
   );
