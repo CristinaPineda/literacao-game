@@ -13,6 +13,8 @@ export default function Jogos() {
   const [input, setInput] = useState('');
   const dataLista = question[questionEquipe].dicas;
   const responseQuestion = question[questionEquipe].resposta;
+  const [btnResponse, setBtnResponse] = useState(true);
+  const [ptsEquipe, setPtsEquipe] = useState(0);
 
   useEffect(() => {
     setListDicas([dataLista[index]]);
@@ -54,6 +56,7 @@ export default function Jogos() {
   const verifyResponse = () => {
     if(input == responseQuestion) {
       console.log('certo');
+      setPtsEquipe(ptsEquipe + pontos);
     } else {
       console.log('errado');
     }
@@ -62,10 +65,12 @@ export default function Jogos() {
   const handleChangeInput = (event) => {
     const inputs = event.target.value;
     setInput(inputs);
+    setBtnResponse(false);
   };
 
   return (
     <DivJogosStyled>
+      <p>{ptsEquipe}</p>
       <div className="divPontos">
         <p>Pontos da questão:</p>
         <p className="pontuacao">{pontos}</p>
@@ -77,7 +82,7 @@ export default function Jogos() {
       </div>
       <div className="divResposta">
         <input type="text" className="inputResposta" placeholder="Digite sua resposta aqui:" onChange={handleChangeInput} />
-        <button className="btnResposta" onClick={verifyResponse}>Responder</button>
+        <button disabled={btnResponse} className="btnResposta" onClick={verifyResponse}>Responder</button>
       </div>
     </DivJogosStyled>
   );
