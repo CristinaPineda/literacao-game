@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState }from 'react';
-import PropTypes from 'prop-types';
 import GameContext from '../../../context/gameContext';
 import DivJogosStyled from '../../../styles/jogo/jogos/jogos';
 
@@ -10,13 +9,15 @@ export default function Jogos() {
   const [btnDicas, setBtnDicas] = useState(true);
   const [listDicas, setListDicas] = useState();
   const [pontos, setPontos] = useState(100);
-  const dataLista = question.dicas;
+  const [questionEquipe, setQuestionEquipe] = useState(0);
+  const dataLista = question[questionEquipe].dicas;
 
   useEffect(() => {
     setListDicas([dataLista[index]]);
+    console.log(question);
   },[]);
   
-  const maps = () => {
+  const listMap = () => {
     return (
       <ul>
         {listDicas.map(item => (<li key={item}>{item}</li>))}
@@ -24,10 +25,12 @@ export default function Jogos() {
     );
   };
 
+
   const handleLimit = () => {
     setIndex(index + 1);
     if(index == 9){
       setBtnDicas(true);
+      setQuestionEquipe(1);
     }
   };
 
@@ -55,12 +58,8 @@ export default function Jogos() {
       <div>
         <button disabled={btnJogar} onClick={handleClick}>Jogar</button>
         <button disabled={btnDicas} onClick={handleClickDicas} className="maisDicas">+</button>
-        { btnJogar == true? maps(): ''}
+        { btnJogar == true? listMap(): ''}
       </div>
     </DivJogosStyled>
   );
 }
-
-Jogos.propTypes = {
-  pontos: PropTypes.number,
-};

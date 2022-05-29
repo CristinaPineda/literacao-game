@@ -1,7 +1,6 @@
 import React from 'react';
 import RenderEquipe from './renderEquipe';
 import DivListStyled from '../../../styles/jogo/equipes/listaEquipes';
-import Jogos from '../../../components/jogo/jogos/jogos';
 
 export default function Equipes() {
   return (
@@ -13,7 +12,6 @@ export default function Equipes() {
         </div>
         <div className="pontosEquipe1">
         </div>
-        <Jogos />
       </div>
       <div className="containerList">
         <div className="equipes">
@@ -22,7 +20,6 @@ export default function Equipes() {
         </div>
         <div className="pontosEquipe2">
         </div>
-        <Jogos />
       </div>
     </DivListStyled>
   );

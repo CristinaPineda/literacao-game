@@ -5,11 +5,12 @@ import GameContext from './gameContext';
 import data from '../assets/data/data.json';
 
 function GameProvider({children}) {
-  const [question, setQuestion] = useState({});
+  const [question, setQuestion] = useState();
 
   const randomElement = () => {
     const initial = data[Math.floor(Math.random() * data.length)];
-    setQuestion(initial);
+    const initial2 = data[Math.floor(Math.random() * data.length)];
+    setQuestion([initial, initial2]);
   };
 
   const context = {
