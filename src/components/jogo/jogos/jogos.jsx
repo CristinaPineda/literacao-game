@@ -10,11 +10,13 @@ export default function Jogos() {
   const [listDicas, setListDicas] = useState();
   const [pontos, setPontos] = useState(100);
   const [questionEquipe, setQuestionEquipe] = useState(0);
+  const [nextQuestion, setNextQuestion] = useState(true);
   const [input, setInput] = useState('');
+  const [btnResponse, setBtnResponse] = useState(true);
+  const [inputRes, setInputRes] = useState(true);
+  const [ptsEquipe, setPtsEquipe] = useState(0);
   const dataLista = question[questionEquipe].dicas;
   const responseQuestion = question[questionEquipe].resposta;
-  const [btnResponse, setBtnResponse] = useState(true);
-  const [ptsEquipe, setPtsEquipe] = useState(0);
 
   useEffect(() => {
     setListDicas([dataLista[index]]);
@@ -34,7 +36,6 @@ export default function Jogos() {
     setIndex(index + 1);
     if(index == 9){
       setBtnDicas(true);
-      setQuestionEquipe(1);
     }
   };
 
@@ -42,6 +43,7 @@ export default function Jogos() {
     console.log(dataLista);
     setBtnJogar(true);
     setBtnDicas(false);
+    setInputRes(false);
     console.log(listDicas);
     handleLimit();
   };
@@ -57,8 +59,18 @@ export default function Jogos() {
     if(input == responseQuestion) {
       console.log('certo');
       setPtsEquipe(ptsEquipe + pontos);
+      setInput('');
+      setBtnResponse(true);
+      setInputRes(true);
+      setNextQuestion(false);
+      setQuestionEquipe(1);
     } else {
       console.log('errado');
+      setInput('');
+      setBtnResponse(true);
+      setInputRes(true);
+      setNextQuestion(false);
+      setQuestionEquipe(1);
     }
   };
 
@@ -66,6 +78,13 @@ export default function Jogos() {
     const inputs = event.target.value;
     setInput(inputs);
     setBtnResponse(false);
+  };
+
+  const next = () => {
+    setIndex(0);
+    setBtnJogar(false);
+    setPontos(100);
+    setListDicas([dataLista[index]]);
   };
 
   return (
@@ -81,8 +100,11 @@ export default function Jogos() {
         { btnJogar == true? listMap(): ''}
       </div>
       <div className="divResposta">
-        <input type="text" className="inputResposta" placeholder="Digite sua resposta aqui:" onChange={handleChangeInput} />
+        <input disabled={inputRes} type="text" className="inputResposta" placeholder="Digite sua resposta aqui:" onChange={handleChangeInput} value={input}/>
         <button disabled={btnResponse} className="btnResposta" onClick={verifyResponse}>Responder</button>
+      </div>
+      <div className="divNextEquipe">
+        <button disabled={nextQuestion} className="btnNext" onClick={next}>Próxima questão</button>
       </div>
     </DivJogosStyled>
   );
