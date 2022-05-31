@@ -2,9 +2,20 @@ import React from 'react';
 import titulo_literacao from '../../images/titulo_literacao.png';
 import MenuStyled from '../../styles/menu/menu';
 import BotaoPlay from '../home/botaoPlay';
+import { useLocation } from 'react-router-dom';
 
 
 export default function Menu(){
+  const { pathname } = useLocation();
+
+  const BtnJogar = () => {
+    if (pathname.includes('/jogo')) {
+      return '';
+    }
+    return (
+      <BotaoPlay className="jogo" />
+    );
+  };
 
   return (
     <MenuStyled>
@@ -14,9 +25,9 @@ export default function Menu(){
       <div className="menu">
         <nav className="nav_menu">
           <a href="/" className="home">Home</a>
-          <BotaoPlay className="jogo" />
           <a href="/sobre" className="sobre">Sobre</a>
           <a href="/referencias" className="referencias">Referências</a>
+          {BtnJogar()}
         </nav>
       </div>
     </MenuStyled>
