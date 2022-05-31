@@ -3,7 +3,7 @@ import GameContext from '../../../context/gameContext';
 import DivJogosStyled from '../../../styles/jogo/jogos/jogos';
 
 export default function Jogos() {
-  const { question } = useContext(GameContext);
+  const { question, equipe1, equipe2 } = useContext(GameContext);
   const [index, setIndex] = useState(0);
   const [btnJogar, setBtnJogar] = useState(false);
   const [btnDicas, setBtnDicas] = useState(true);
@@ -21,6 +21,8 @@ export default function Jogos() {
   useEffect(() => {
     setListDicas([dataLista[index]]);
     console.log(question);
+    console.log(equipe1);
+    console.log(equipe2);
   },[]);
   
   const listMap = () => {
@@ -46,6 +48,8 @@ export default function Jogos() {
     setInputRes(false);
     console.log(listDicas);
     handleLimit();
+    console.log(equipe1);
+    console.log(equipe2);
   };
 
   const handleClickDicas = async() => {
