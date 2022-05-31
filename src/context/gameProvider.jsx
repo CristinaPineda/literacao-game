@@ -9,15 +9,7 @@ function GameProvider({children}) {
   const [equipe1, setEquipe1] = useState();
   const [equipe2, setEquipe2] = useState();
 
-
-  const divideEquipes = () => {
-    const one = question.slice(0, 3);
-    const two = question.slice(3);
-    setEquipe1(one);
-    setEquipe2(two);
-  };
-
-  const randomElement = async () => {
+  const randomElement = () => {
     let i = 0;
     const equipes = [];
     while (i < 6 ){
@@ -25,7 +17,7 @@ function GameProvider({children}) {
       equipes.push(rand);
       i++;
     }
-    await setQuestion(equipes);
+    setQuestion(equipes);
     const one = equipes.slice(0, 3);
     const two = equipes.slice(3);
     setEquipe1(one);
@@ -37,7 +29,6 @@ function GameProvider({children}) {
     equipe1,
     equipe2,
     randomElement,
-    divideEquipes,
   };
 
 
