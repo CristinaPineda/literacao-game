@@ -17,6 +17,7 @@ export default function Jogos() {
   const [ptsEquipe, setPtsEquipe] = useState(0);
   const dataLista = question[questionEquipe].dicas;
   const responseQuestion = question[questionEquipe].resposta;
+  // refactor
 
   useEffect(() => {
     setListDicas([dataLista[index]]);
