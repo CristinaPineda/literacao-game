@@ -21,6 +21,7 @@ export default function Jogos() {
 
   useEffect(() => {
     setListDicas([dataLista[index]]);
+    console.log(question);
   },[]);
   
   const listMap = () => {

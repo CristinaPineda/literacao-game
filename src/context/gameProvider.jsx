@@ -8,12 +8,10 @@ function GameProvider({children}) {
   const [question, setQuestion] = useState();
 
   const randomElement = () => {
-    let i = 0;
     const equipes = [];
-    while (i < 5 ){
+    while (equipes.length < 5 ){
       const rand = data[Math.floor(Math.random() * data.length)];
       equipes.push(rand);
-      i++;
     }
     setQuestion(equipes);
   };
