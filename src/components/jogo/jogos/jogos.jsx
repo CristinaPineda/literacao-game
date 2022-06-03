@@ -3,7 +3,7 @@ import GameContext from '../../../context/gameContext';
 import DivJogosStyled from '../../../styles/jogo/jogos/jogos';
 
 export default function Jogos() {
-  const { question, equipe1, equipe2 } = useContext(GameContext);
+  const { question } = useContext(GameContext);
   const [index, setIndex] = useState(0);
   const [btnJogar, setBtnJogar] = useState(false);
   const [btnDicas, setBtnDicas] = useState(true);
@@ -17,13 +17,10 @@ export default function Jogos() {
   const [ptsEquipe, setPtsEquipe] = useState(0);
   const dataLista = question[questionEquipe].dicas;
   const responseQuestion = question[questionEquipe].resposta;
-  // refactor
+
 
   useEffect(() => {
     setListDicas([dataLista[index]]);
-    console.log(question);
-    console.log(equipe1);
-    console.log(equipe2);
   },[]);
   
   const listMap = () => {
@@ -34,26 +31,26 @@ export default function Jogos() {
     );
   };
 
-
   const handleLimit = () => {
     setIndex(index + 1);
+    setInputRes(false);
+    setBtnResponse(false);
+    setNextQuestion(true);
     if(index == 9){
       setBtnDicas(true);
     }
   };
 
-  const handleClick = async() => {
+  const handleClick = () => {
     console.log(dataLista);
     setBtnJogar(true);
     setBtnDicas(false);
     setInputRes(false);
     console.log(listDicas);
     handleLimit();
-    console.log(equipe1);
-    console.log(equipe2);
   };
 
-  const handleClickDicas = async() => {
+  const handleClickDicas = () => {
     setListDicas( [...listDicas, dataLista[index]]);
     setIndex(index + 1);
     setPontos(pontos - 10),
@@ -64,19 +61,15 @@ export default function Jogos() {
     if(input == responseQuestion) {
       console.log('certo');
       setPtsEquipe(ptsEquipe + pontos);
-      setInput('');
-      setBtnResponse(true);
-      setInputRes(true);
-      setNextQuestion(false);
-      setQuestionEquipe(1);
     } else {
       console.log('errado');
-      setInput('');
-      setBtnResponse(true);
-      setInputRes(true);
-      setNextQuestion(false);
-      setQuestionEquipe(1);
     }
+    setInput('');
+    setBtnResponse(true);
+    setInputRes(true);
+    setNextQuestion(false);
+    setQuestionEquipe(questionEquipe + 1);
+    setIndex(0);
   };
 
   const handleChangeInput = (event) => {
@@ -85,10 +78,10 @@ export default function Jogos() {
     setBtnResponse(false);
   };
 
-  const next = () => {
-    setIndex(0);
-    setBtnJogar(false);
-    setPontos(100);
+  const next = async () => {
+    setBtnDicas(false);
+    setPontos(100);    
+    handleLimit();
     setListDicas([dataLista[index]]);
   };
 
@@ -109,7 +102,7 @@ export default function Jogos() {
         <button disabled={btnResponse} className="btnResposta" onClick={verifyResponse}>Responder</button>
       </div>
       <div className="divNextEquipe">
-        <button disabled={nextQuestion} className="btnNext" onClick={next}>Próxima questão</button>
+        {questionEquipe >= 4? <p>acabou</p> : <button disabled={nextQuestion} className="btnNext" onClick={next}>Próxima questão</button> }
       </div>
     </DivJogosStyled>
   );
