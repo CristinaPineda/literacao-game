@@ -6,18 +6,24 @@ import data from '../assets/data/data.json';
 
 function GameProvider({children}) {
   const [question, setQuestion] = useState();
+  const [player, setPlayer] = useState(null);
+  const [score, setScore] = useState(0);
 
   const randomElement = () => {
-    const equipes = [];
-    while (equipes.length < 5 ){
+    const answers = [];
+    while (answers.length < 5 ){
       const rand = data[Math.floor(Math.random() * data.length)];
-      equipes.push(rand);
+      answers.push(rand);
     }
-    setQuestion(equipes);
+    setQuestion(answers);
   };
 
   const context = {
     question,
+    player,
+    setPlayer,
+    score,
+    setScore,
     randomElement,
   };
 
