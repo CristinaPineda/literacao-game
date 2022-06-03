@@ -1,20 +1,21 @@
 import React, { useState, useContext } from 'react';
 import GameContext from '../../../context/gameContext';
-import DivListStyled from '../../../styles/jogo/equipes/listaEquipes';
+import DivStyled from '../../../styles/jogo/equipes/listaEquipes';
+import Score from '../score/score';
 
 export default function Jogador() {
   const {player, setPlayer} = useContext(GameContext);
   const [input, setInput] = useState('');
-  const [resp, setResp] = useState(false);
+  const [inputOn, setInputOn] = useState(false);
   const [btn, setBtn] = useState(false);
 
   const handleChangeInput = (event) => {
-    const inputs = event.target.value;
-    setPlayer(inputs);
+    const text = event.target.value;
+    setPlayer(text);
   };
 
   const disabledInput = () => {
-    setResp(true);
+    setInputOn(true);
     setInput('');
     setBtn(true);
     console.log(input);
@@ -23,20 +24,26 @@ export default function Jogador() {
   const renderForm = () => {
     return (
       <>
-        <input disabled={resp} type="text" placeholder="Digite seu nome aqui:" onChange={handleChangeInput} value={player}/>
+        <input disabled={inputOn} type="text" placeholder="Digite seu nome aqui:" onChange={handleChangeInput} value={player}/>
         <button disabled={btn} onClick={disabledInput}>Ok</button>
       </>
     );
   };
 
-  return (
-    <DivListStyled>
-      <div className="containerList">
-        <div className="equipes">
-          <h3>Jogador: { player }</h3>
-          {btn? '' : renderForm()}
+  const Player = () => {
+    return (
+      <DivStyled>
+        <div className="container">
+          <div className="player">
+            <p className="pNome">Antes de iniciar o jogo, digite seu nome para aparecer no ranking!</p>
+            <h3>Nome: { player }</h3>
+            {btn? '' : renderForm()}
+          </div>
         </div>
-      </div>
-    </DivListStyled>
-  );
+        <Score />
+      </DivStyled>
+    );
+  };
+
+  return Player();
 }

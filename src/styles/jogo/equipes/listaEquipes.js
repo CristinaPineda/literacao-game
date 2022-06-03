@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-const DivListStyled = styled.div`
+const DivStyled = styled.div`
   display: flex;
   justify-content: space-around;
   
-  .containerList {
+  .containe {
     display: flex;
     flex-direction: column;
   }
@@ -16,4 +16,4 @@ const DivListStyled = styled.div`
   }
 `;
 
-export default DivListStyled;
+export default DivStyled;

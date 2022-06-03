@@ -3,7 +3,7 @@ import GameContext from '../../../context/gameContext';
 import DivJogosStyled from '../../../styles/jogo/jogos/jogos';
 
 export default function Jogos() {
-  const { question } = useContext(GameContext);
+  const { question, score, setScore } = useContext(GameContext);
   const [index, setIndex] = useState(0);
   const [btnJogar, setBtnJogar] = useState(false);
   const [btnDicas, setBtnDicas] = useState(true);
@@ -14,7 +14,6 @@ export default function Jogos() {
   const [input, setInput] = useState('');
   const [btnResponse, setBtnResponse] = useState(true);
   const [inputRes, setInputRes] = useState(true);
-  const [ptsEquipe, setPtsEquipe] = useState(0);
   const dataLista = question[questionEquipe].dicas;
   const responseQuestion = question[questionEquipe].resposta;
 
@@ -61,7 +60,7 @@ export default function Jogos() {
   const verifyResponse = () => {
     if(input == responseQuestion) {
       console.log('certo');
-      setPtsEquipe(ptsEquipe + pontos);
+      setScore(score + pontos);
     } else {
       console.log('errado');
     }
@@ -88,7 +87,6 @@ export default function Jogos() {
 
   return (
     <DivJogosStyled>
-      <p>{ptsEquipe}</p>
       <div className="divPontos">
         <p>Pontos da questão:</p>
         <p className="pontuacao">{pontos}</p>
