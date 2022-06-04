@@ -8,13 +8,13 @@ export default function Correct() {
     if (ok == 'true') {
       return (
         <>
-          <spam className="spamCorrect">CORRETO!!</spam>
+          <p className="spamCorrect">CORRETO!!</p>
         </>
       );
     } else if(ok == 'false') {
       return (
         <>
-          <spam className="spanWrong">ERRADO!!</spam>
+          <p className="spanWrong">ERRADO!!</p>
         </>
       );
     } else if(ok == '') {

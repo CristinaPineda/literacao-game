@@ -24,7 +24,7 @@ export default function Player() {
   const renderForm = () => {
     return (
       <>
-        <input disabled={inputOn} type="text" placeholder="Digite seu nome aqui:" onChange={handleChangeInput} value={player}/>
+        <input disabled={inputOn} type="text" placeholder="Digite seu nome aqui:" onChange={handleChangeInput}/>
         <button disabled={btn} onClick={disabledInput}>Ok</button>
       </>
     );
