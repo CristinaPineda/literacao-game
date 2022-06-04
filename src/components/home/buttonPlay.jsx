@@ -3,9 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import BotaoPlayStyled from '../../styles/home/botaoPlay';
 import GameContext from '../../context/gameContext';
 
-export default function BotaoPlay() {
+export default function ButtonPlay() {
   const { randomElement } = useContext(GameContext);
-
   const pages = useNavigate();
 
   const goPages = async () => {

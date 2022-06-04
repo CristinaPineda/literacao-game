@@ -1,6 +1,6 @@
 import React from 'react';
-import Menu from '../components/menu/Menu';
-import Sobre from '../components/sobre/Sobre';
+import Menu from '../components/menu/menu';
+import Sobre from '../components/about/about';
 
 export default function Home() {
   return (

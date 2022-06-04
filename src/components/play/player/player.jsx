@@ -3,7 +3,7 @@ import GameContext from '../../../context/gameContext';
 import DivStyled from '../../../styles/jogo/equipes/listaEquipes';
 import Score from '../score/score';
 
-export default function Jogador() {
+export default function Player() {
   const {player, setPlayer} = useContext(GameContext);
   const [input, setInput] = useState('');
   const [inputOn, setInputOn] = useState(false);

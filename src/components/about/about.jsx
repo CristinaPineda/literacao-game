@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Sobre() {
+export default function About() {
   return (
     <>
       <p>Descrição do jogo</p>

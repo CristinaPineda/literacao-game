@@ -1,14 +1,14 @@
 import React from 'react';
-import Menu from '../components/menu/Menu';
-import Descricao from '../components/home/descricao';
-import BotaoPlay from '../components/home/botaoPlay';
+import Menu from '../components/menu/menu';
+import Description from '../components/home/description';
+import ButtonPlay from '../components/home/buttonPlay';
 
 export default function Home() {
   return (
     <>
       <Menu />
-      <Descricao />
-      <BotaoPlay />
+      <Description />
+      <ButtonPlay />
     </>
   );
 }

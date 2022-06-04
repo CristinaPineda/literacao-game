@@ -1,7 +1,7 @@
 import React from 'react';
 import titulo_literacao from '../../images/titulo_literacao.png';
 import MenuStyled from '../../styles/menu/menu';
-import BotaoPlay from '../home/botaoPlay';
+import ButtonPlay from '../home/buttonPlay';
 import {useLocation} from 'react-router-dom';
 
 
@@ -13,7 +13,7 @@ export default function Menu(){
       return '';
     }
     return (
-      <BotaoPlay className="jogo" />
+      <ButtonPlay className="jogo" />
     );
   };
 

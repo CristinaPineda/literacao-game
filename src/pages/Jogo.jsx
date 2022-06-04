@@ -1,14 +1,14 @@
 import React from 'react';
-import Menu from '../components/menu/Menu';
-import Jogador from '../components/jogo/jogador/jogador';
-import Jogos from '../components/jogo/jogos/jogos';
+import Menu from '../components/menu/menu';
+import Player from '../components/play/player/player';
+import Game from '../components/play/game/game';
 
 export default function Home() {
   return (
     <>
       <Menu />
-      <Jogador />
-      <Jogos />
+      <Player />
+      <Game />
     </>
   );
 }

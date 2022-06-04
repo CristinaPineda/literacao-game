@@ -4,7 +4,7 @@ import DivJogosStyled from '../../../styles/jogo/jogos/jogos';
 import NextGame from './nextGame';
 import Correct from './correct';
 
-export default function Jogos() {
+export default function Game() {
   const { question, score, setScore, setOk } = useContext(GameContext);
   const [index, setIndex] = useState(0);
   const [btnJogar, setBtnJogar] = useState(false);
