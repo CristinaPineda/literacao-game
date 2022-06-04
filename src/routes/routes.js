@@ -11,6 +11,7 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route exact path="/home" element={<Home />} />
         <Route exact path="/jogo" element={<Jogo />} />
         <Route exact path="/sobre" element={<Sobre />} />
         <Route exact path="/referencias" element={<Referencias />} />

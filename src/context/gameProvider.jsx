@@ -8,6 +8,7 @@ function GameProvider({children}) {
   const [question, setQuestion] = useState();
   const [player, setPlayer] = useState(null);
   const [score, setScore] = useState(0);
+  const [ok, setOk] = useState('');
 
   const randomElement = () => {
     const answers = [];
@@ -24,6 +25,8 @@ function GameProvider({children}) {
     setPlayer,
     score,
     setScore,
+    ok,
+    setOk,
     randomElement,
   };
 

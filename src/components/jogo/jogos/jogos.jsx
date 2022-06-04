@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState }from 'react';
 import GameContext from '../../../context/gameContext';
 import DivJogosStyled from '../../../styles/jogo/jogos/jogos';
+import NextGame from './nextGame';
+import Correct from './correct';
 
 export default function Jogos() {
-  const { question, score, setScore } = useContext(GameContext);
+  const { question, score, setScore, setOk } = useContext(GameContext);
   const [index, setIndex] = useState(0);
   const [btnJogar, setBtnJogar] = useState(false);
   const [btnDicas, setBtnDicas] = useState(true);
@@ -16,7 +18,6 @@ export default function Jogos() {
   const [inputRes, setInputRes] = useState(true);
   const dataLista = question[questionEquipe].dicas;
   const responseQuestion = question[questionEquipe].resposta;
-
 
   useEffect(() => {
     setListDicas([dataLista[index]]);
@@ -47,6 +48,7 @@ export default function Jogos() {
     setBtnDicas(false);
     setInputRes(false);
     console.log(listDicas);
+    console.log(responseQuestion);
     handleLimit();
   };
 
@@ -61,12 +63,15 @@ export default function Jogos() {
     if(input == responseQuestion) {
       console.log('certo');
       setScore(score + pontos);
+      setOk('true');
     } else {
       console.log('errado');
+      setOk('false');
     }
     setInput('');
     setBtnResponse(true);
     setInputRes(true);
+    setBtnDicas(true);
     setNextQuestion(false);
     setQuestionEquipe(questionEquipe + 1);
     setIndex(0);
@@ -80,6 +85,7 @@ export default function Jogos() {
 
   const next = async () => {
     setBtnDicas(false);
+    setOk('');
     setPontos(100);    
     handleLimit();
     setListDicas([dataLista[index]]);
@@ -88,8 +94,7 @@ export default function Jogos() {
   return (
     <DivJogosStyled>
       <div className="divPontos">
-        <p>Pontos da questão:</p>
-        <p className="pontuacao">{pontos}</p>
+        <p>Pontos da questão: {pontos}</p>
       </div>
       <div>
         <button disabled={btnJogar} onClick={handleClick}>Jogar</button>
@@ -99,9 +104,10 @@ export default function Jogos() {
       <div className="divResposta">
         <input disabled={inputRes} type="text" className="inputResposta" placeholder="Digite sua resposta aqui:" onChange={handleChangeInput} value={input}/>
         <button disabled={btnResponse} className="btnResposta" onClick={verifyResponse}>Responder</button>
+        <Correct />
       </div>
       <div className="divNextEquipe">
-        {questionEquipe >= 4? <p>acabou</p> : <button disabled={nextQuestion} className="btnNext" onClick={next}>Próxima questão</button> }
+        {questionEquipe <= 1? <button disabled={nextQuestion} className="btnNext" onClick={next}>Próxima questão</button> : <NextGame />}
       </div>
     </DivJogosStyled>
   );

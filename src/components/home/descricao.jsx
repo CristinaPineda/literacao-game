@@ -7,7 +7,7 @@ export default function Descricao() {
       <div className="decricao_div">
         <h1 className="decricao_jogo">O Jogo</h1>
         <p className="decricao">
-          { Descreve()}
+          {Descreve()}
         </p>
       </div>
       <div className="regras_div">
