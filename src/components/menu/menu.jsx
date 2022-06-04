@@ -28,6 +28,7 @@ export default function Menu(){
             <a href="/" className="home">Home</a>
             <a href="/sobre" className="sobre">Sobre</a>
             <a href="/referencias" className="referencias">Referências</a>
+            <a href="/ranking" className="referencias">Ranking</a>
             {BtnJogar()}
           </nav>
         </div>
