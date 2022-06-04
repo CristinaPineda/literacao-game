@@ -12,8 +12,11 @@ function GameProvider({children}) {
 
   const randomElement = () => {
     const answers = [];
+    let rand;
     while (answers.length < 5 ){
-      const rand = data[Math.floor(Math.random() * data.length)];
+      do {
+        rand = data[Math.floor(Math.random() * data.length)];
+      } while (answers.indexOf(rand) >= 0);
       answers.push(rand);
     }
     setQuestion(answers);
