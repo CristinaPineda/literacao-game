@@ -1,14 +1,12 @@
-import React, {useContext} from 'react';
+import React  from 'react';
 import titulo_literacao from '../../images/titulo_literacao.png';
 import MenuStyled from '../../styles/menu/menu';
 import ButtonPlay from '../home/buttonPlay';
-import {useLocation, useNavigate} from 'react-router-dom';
-import GameContext from '../../context/gameContext';
+import ButtonRanking from '../home/buttonRanking';
+import {useLocation} from 'react-router-dom';
 
 export default function Menu(){
-  const {storage} = useContext(GameContext);
   const {pathname} = useLocation();
-  const pages = useNavigate();
 
   const BtnJogar = () => {
     if (pathname.includes('/jogo') || pathname.includes('/ranking') ) {
@@ -24,13 +22,8 @@ export default function Menu(){
       return '';
     }
     return (
-      <button onClick={goPages}>Ranking</button>
+      <ButtonRanking />
     );
-  };
-
-  const goPages = async () => {
-    await storage();
-    pages('/ranking');
   };
 
   const MainMenu = () => {
