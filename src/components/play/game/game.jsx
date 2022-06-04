@@ -5,7 +5,7 @@ import NextGame from './nextGame';
 import Correct from './correct';
 
 export default function Game() {
-  const { question, score, setScore, setOk } = useContext(GameContext);
+  const { question, score, setScore, setOk} = useContext(GameContext);
   const [index, setIndex] = useState(0);
   const [btnJogar, setBtnJogar] = useState(false);
   const [btnDicas, setBtnDicas] = useState(true);

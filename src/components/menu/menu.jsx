@@ -1,20 +1,36 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import titulo_literacao from '../../images/titulo_literacao.png';
 import MenuStyled from '../../styles/menu/menu';
 import ButtonPlay from '../home/buttonPlay';
-import {useLocation} from 'react-router-dom';
-
+import {useLocation, useNavigate} from 'react-router-dom';
+import GameContext from '../../context/gameContext';
 
 export default function Menu(){
+  const {storage} = useContext(GameContext);
   const {pathname} = useLocation();
+  const pages = useNavigate();
 
   const BtnJogar = () => {
-    if (pathname.includes('/jogo')) {
+    if (pathname.includes('/jogo') || pathname.includes('/ranking') ) {
       return '';
     }
     return (
       <ButtonPlay className="jogo" />
     );
+  };
+
+  const BtnRanking = () => {
+    if (pathname.includes('/ranking') ) {
+      return '';
+    }
+    return (
+      <button onClick={goPages}>Ranking</button>
+    );
+  };
+
+  const goPages = async () => {
+    await storage();
+    pages('/ranking');
   };
 
   const MainMenu = () => {
@@ -28,7 +44,7 @@ export default function Menu(){
             <a href="/" className="home">Home</a>
             <a href="/sobre" className="sobre">Sobre</a>
             <a href="/referencias" className="referencias">Referências</a>
-            <a href="/ranking" className="referencias">Ranking</a>
+            {BtnRanking()}
             {BtnJogar()}
           </nav>
         </div>

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-
 import PropTypes from 'prop-types';
 import GameContext from './gameContext';
 import data from '../assets/data/data.json';
 
 function GameProvider({children}) {
   const [question, setQuestion] = useState();
-  const [player, setPlayer] = useState(null);
+  const [player, setPlayer] = useState('');
   const [score, setScore] = useState(0);
   const [ok, setOk] = useState('');
+  const [listRank, setListRank] = useState();
 
   const randomElement = () => {
     const answers = [];
@@ -19,6 +19,13 @@ function GameProvider({children}) {
     setQuestion(answers);
   };
 
+  const storage = async() => {
+    const ol = [];
+    let list = JSON.parse(localStorage.getItem('ranking'));
+    ol.push(list);
+    setListRank(ol[0]);
+  };
+
   const context = {
     question,
     player,
@@ -27,6 +34,9 @@ function GameProvider({children}) {
     setScore,
     ok,
     setOk,
+    listRank,
+    setListRank,
+    storage,
     randomElement,
   };
 

@@ -4,11 +4,12 @@ import BotaoPlayStyled from '../../styles/home/botaoPlay';
 import GameContext from '../../context/gameContext';
 
 export default function ButtonPlay() {
-  const { randomElement } = useContext(GameContext);
+  const { randomElement, setPlayer } = useContext(GameContext);
   const pages = useNavigate();
 
   const goPages = async () => {
     await randomElement();
+    setPlayer('');
     pages('/jogo');
   };
 
