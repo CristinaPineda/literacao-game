@@ -43,12 +43,9 @@ export default function Game() {
   };
 
   const handleClick = () => {
-    console.log(dataLista);
     setBtnJogar(true);
     setBtnDicas(false);
     setInputRes(false);
-    console.log(listDicas);
-    console.log(responseQuestion);
     handleLimit();
   };
 
@@ -58,16 +55,16 @@ export default function Game() {
     setPontos(pontos - 10),
     handleLimit();
   };
-
-  const verifyResponse = () => {
-    if(input == responseQuestion) {
-      console.log('certo');
+  
+  const verifyResponse = async() => {
+    let response = responseQuestion.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+    let responseInput = input.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+    if(response == responseInput) {
       setScore(score + pontos);
       setOk('true');
     } else {
-      console.log('errado');
       setOk('false');
-    }
+    } 
     setInput('');
     setBtnResponse(true);
     setInputRes(true);
@@ -91,24 +88,38 @@ export default function Game() {
     setListDicas([dataLista[index]]);
   };
 
-  return (
-    <DivJogosStyled>
-      <div className="divPontos">
-        <p>Pontos da questão: {pontos}</p>
-      </div>
-      <div>
-        <button disabled={btnJogar} onClick={handleClick}>Jogar</button>
-        <button disabled={btnDicas} onClick={handleClickDicas} className="maisDicas">+</button>
-        { btnJogar == true? listMap(): ''}
-      </div>
-      <div className="divResposta">
-        <input disabled={inputRes} type="text" className="inputResposta" placeholder="Digite sua resposta aqui:" onChange={handleChangeInput} value={input}/>
-        <button disabled={btnResponse} className="btnResposta" onClick={verifyResponse}>Responder</button>
-        <Correct />
-      </div>
-      <div className="divNextEquipe">
-        {questionEquipe <= 1? <button disabled={nextQuestion} className="btnNext" onClick={next}>Próxima questão</button> : <NextGame />}
-      </div>
-    </DivJogosStyled>
-  );
+  const newQuestion = () => {
+    if(questionEquipe <= 4) {
+      return(
+        <button disabled={nextQuestion} className="btnNext" onClick={next}>Próxima questão</button>
+      );
+    } else {
+      setListDicas(['', '']);
+    }
+  };
+
+  const RenderGame = () => {
+    return (
+      <DivJogosStyled>
+        <div className="divPontos">
+          <p>Pontos da questão: {pontos}</p>
+        </div>
+        <div>
+          <button disabled={btnJogar} onClick={handleClick}>Jogar</button>
+          <button disabled={btnDicas} onClick={handleClickDicas} className="maisDicas">+</button>
+          { btnJogar == true? listMap(): ''}
+        </div>
+        <div className="divResposta">
+          <input disabled={inputRes} type="text" className="inputResposta" placeholder="Digite sua resposta aqui:" onChange={handleChangeInput} value={input}/>
+          <button disabled={btnResponse} className="btnResposta" onClick={verifyResponse}>Responder</button>
+          <Correct />
+        </div>
+        <div className="divNextEquipe">
+          {questionEquipe <= 4? newQuestion() : <NextGame />}
+        </div>
+      </DivJogosStyled>
+    );
+  };
+
+  return RenderGame();
 }
