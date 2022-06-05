@@ -18,6 +18,7 @@ export default function Game() {
   const [inputRes, setInputRes] = useState(true);
   const dataLista = question[questionEquipe].dicas;
   const responseQuestion = question[questionEquipe].resposta;
+  const [resp, setResp] = useState();
 
   useEffect(() => {
     setListDicas([dataLista[index]]);
@@ -64,7 +65,8 @@ export default function Game() {
       setOk('true');
     } else {
       setOk('false');
-    } 
+    }
+    setResp(responseQuestion);
     setInput('');
     setBtnResponse(true);
     setInputRes(true);
@@ -112,7 +114,7 @@ export default function Game() {
         <div className="divResposta">
           <input disabled={inputRes} type="text" className="inputResposta" placeholder="Digite sua resposta aqui:" onChange={handleChangeInput} value={input}/>
           <button disabled={btnResponse} className="btnResposta" onClick={verifyResponse}>Responder</button>
-          <Correct />
+          <Correct responseQuestion={resp} />
         </div>
         <div className="divNextEquipe">
           {questionEquipe <= 4? newQuestion() : <NextGame />}

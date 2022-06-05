@@ -26,6 +26,15 @@ function GameProvider({children}) {
     const ol = [];
     let list = JSON.parse(localStorage.getItem('ranking'));
     ol.push(list);
+    if(list == null) {
+      setListRank('null');
+    } else {
+
+      ol[0].sort((a,b) => {
+        return a.score > b.score ? -1 : a.name < b.name? 1 : 0 ;
+      });
+    }
+
     setListRank(ol[0]);
   };
 
