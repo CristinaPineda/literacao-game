@@ -3,6 +3,7 @@ import GameContext from '../../context/gameContext';
 
 export default function Ranked() {
   const {listRank} = useContext(GameContext);
+  const top = listRank.slice(0,10);
 
   const TopList = () => {
     if(listRank == null) {
@@ -18,7 +19,7 @@ export default function Ranked() {
           <h1 className="h1Ranking">TOP 10 - Melhores pontuações</h1>
           <div className="divListRank">
             <ol>
-              {listRank.map((item, id) => (<li key={id}>{item.player}: {item.score}</li>))}
+              {top.map((item, id) => (<li key={id}>{item.player}: {item.score}</li>))}
             </ol>
           </div>
         </>
