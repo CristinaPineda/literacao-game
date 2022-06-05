@@ -1,14 +1,16 @@
 import React from 'react';
 import Purpose from './purpose';
 import Justification from './justification';
+import Students from './students';
+import Description from './description';
 
 export default function About() {
   return (
     <>
-      <p>Descrição do jogo</p>
+      <Description />
       <Purpose />
       <Justification />
-      <p>estudantes</p>
+      <Students />
     </>
   );
 }
