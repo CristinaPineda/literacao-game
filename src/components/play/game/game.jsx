@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState }from 'react';
 import GameContext from '../../../context/gameContext';
 import DivJogosStyled from '../../../styles/jogo/jogos/jogos';
+import Region from './region';
 import NextGame from './nextGame';
 import Correct from './correct';
 
@@ -110,6 +111,9 @@ export default function Game() {
           <button disabled={btnJogar} onClick={handleClick}>Jogar</button>
           <button disabled={btnDicas} onClick={handleClickDicas} className="maisDicas">+</button>
           { btnJogar == true? listMap(): ''}
+        </div>
+        <div className="region">
+          {btnJogar && nextQuestion? <Region questionEquipe={questionEquipe}/>: ''}
         </div>
         <div className="divResposta">
           <input disabled={inputRes} type="text" className="inputResposta" placeholder="Digite sua resposta aqui:" onChange={handleChangeInput} value={input}/>
