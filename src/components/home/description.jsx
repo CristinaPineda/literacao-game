@@ -20,17 +20,17 @@ export default function Description() {
         <p className="rules">
           Na tela do jogo, digite seu nome e clique em OK.<br/>
           Seu nome ficará na tela, ao lado aparecerá sua pontuação da rodada.<br/>
-          <p>
-          Clique em <strong>INICIAR JOGO</strong>, uma dica aparecerá na lista, a região que a pergunta faz referência e o valor de pontos que a pergunta irá valer.<br/>
-            <strong>ATENÇÃO!</strong> Cada vez que você clicar em pedir mais dicas serão <strong>retirados 10 pontos</strong> da pergunta. Caso você acerte a questão, seus pontos serão somados à pontuação total da rodada.
-          </p>
+        </p>
+        <p>
+        Clique em <strong>INICIAR JOGO</strong>, uma dica aparecerá na lista, a região que a pergunta faz referência e o valor de pontos que a pergunta irá valer.<br/>
+          <strong>ATENÇÃO!</strong> Cada vez que você clicar em pedir mais dicas serão <strong>retirados 10 pontos</strong> da pergunta. Caso você acerte a questão, seus pontos serão somados à pontuação total da rodada.
         </p>
         <p>Cada questão começa valendo 100 pontos e pode chegar a 10 pontos caso sejam utilizadas todas as dicas.</p>
         <p>Se errar a questão não serão somados nem subtraidos pontos.</p>
         <p>Permaneça na página do jogo até terminar a rodada, caso saia o progresso do jogo será perdido e um novo jogo terá de ser iniciado.</p>
       </div>
       <div>
-        <h3>E ai está pronto? Vamos jogar!</h3>
+        <h3>E ai, está pronto? Vamos jogar!</h3>
       </div>
     </>
   );
