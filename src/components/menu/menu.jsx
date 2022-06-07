@@ -4,6 +4,10 @@ import MenuStyled from '../../styles/menu/menu';
 import ButtonPlay from '../home/buttonPlay';
 import ButtonRanking from '../home/buttonRanking';
 import {useLocation} from 'react-router-dom';
+import { HiHome } from 'react-icons/hi';
+import { AiFillBulb } from 'react-icons/ai';
+import { TbBooks } from 'react-icons/tb';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 export default function Menu(){
   const {pathname} = useLocation();
@@ -26,6 +30,11 @@ export default function Menu(){
     );
   };
 
+  const toggleMenu = () => {
+    const nav = document.querySelector('.nav_menu');
+    nav.classList.toggle('nav_mobile');
+  };
+
   const MainMenu = () => {
     return (
       <MenuStyled>
@@ -34,11 +43,24 @@ export default function Menu(){
         </div>
         <div className="menu">
           <nav className="nav_menu">
-            <a href="/" className="home">Home</a>
-            <a href="/sobre" className="sobre">Sobre</a>
-            <a href="/referencias" className="referencias">Referências</a>
-            {BtnRanking()}
-            {BtnJogar()}
+            <GiHamburgerMenu onClick={toggleMenu} className="btn_mobile" size="1.8rem" />
+            <ul className="nav_ul">
+              <li>
+                <a href="/" className="home"><HiHome size="1.8rem"/>Home</a>
+              </li>
+              <li>
+                <a href="/sobre" className="sobre"><AiFillBulb size="1.8rem"/>Sobre</a>
+              </li>
+              <li>
+                <a href="/referencias" className="referencias"><TbBooks size="1.8rem"/>Referências</a>
+              </li>
+              <li>
+                {BtnRanking()}
+              </li>
+              <li>
+                {BtnJogar()}
+              </li>
+            </ul>
           </nav>
         </div>
       </MenuStyled>
