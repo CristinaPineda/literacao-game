@@ -16,7 +16,7 @@ export default function ButtonRanking() {
   const goRank = () => {
     return (
       <BotaoPlayStyled>
-        <a onClick={goPages}><AiFillTrophy size="1.8rem"/>Ranking</a>
+        <a className="btn_rank" onClick={goPages}><AiFillTrophy size="1.8rem" color="yellow"/>Ranking</a>
       </BotaoPlayStyled>
     );
   };

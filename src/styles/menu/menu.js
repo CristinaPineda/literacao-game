@@ -16,8 +16,8 @@ const MenuStyled = styled.div`
   .menu {
     .nav_menu {
       margin: auto;
-      border-top: 1px double darkblue;
-      border-bottom: 1px double darkblue;
+      border-top: 1px double lightgreen;
+      border-bottom: 1px double lightgreen;
       color: white;
       background-color: #27635e;
 

@@ -6,7 +6,7 @@ import ButtonRanking from '../home/buttonRanking';
 import {useLocation} from 'react-router-dom';
 import { HiHome } from 'react-icons/hi';
 import { AiFillBulb } from 'react-icons/ai';
-import { TbBooks } from 'react-icons/tb';
+import { ImBook } from 'react-icons/im';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 export default function Menu(){
@@ -43,16 +43,16 @@ export default function Menu(){
         </div>
         <div className="menu">
           <nav className="nav_menu">
-            <GiHamburgerMenu onClick={toggleMenu} className="btn_mobile" size="1.8rem" />
+            <GiHamburgerMenu onClick={toggleMenu} className="btn_mobile" size="1.8rem" color="brown" />
             <ul className="nav_ul">
               <li>
-                <a href="/" className="home"><HiHome size="1.8rem"/>Home</a>
+                <a href="/" className="home"><HiHome size="1.8rem" color="blue"/>Home</a>
               </li>
               <li>
-                <a href="/sobre" className="sobre"><AiFillBulb size="1.8rem"/>Sobre</a>
+                <a href="/sobre" className="sobre"><AiFillBulb size="1.8rem" color="orange"/>Sobre</a>
               </li>
               <li>
-                <a href="/referencias" className="referencias"><TbBooks size="1.8rem"/>Referências</a>
+                <a href="/referencias" className="referencias"><ImBook size="1.8rem" color="purple"/> Referências</a>
               </li>
               <li>
                 {BtnRanking()}
