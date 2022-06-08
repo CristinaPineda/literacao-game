@@ -1,10 +1,11 @@
 import React from 'react';
+import DescriptionStyled from '../../styles/home/description';
 
 export default function Description() {
   return (
-    <>
+    <DescriptionStyled>
       <div className="divDescription">
-        <h1 className="descriptionGame">O Jogo</h1>
+        <h1 className="descriptionGame">O JOGO</h1>
         <p className="description">
           Literação, em sua forma original é um jogo de tabuleiro cujo objetivo educacional é auxiliar no processo de ensino-aprendizagem da literatura Brasileira.
         </p>
@@ -29,9 +30,9 @@ export default function Description() {
         <p>Se errar a questão não serão somados nem subtraidos pontos.</p>
         <p>Permaneça na página do jogo até terminar a rodada, caso saia o progresso do jogo será perdido e um novo jogo terá de ser iniciado.</p>
       </div>
-      <div>
+      <div className="jogar">
         <h3>E ai, está pronto? Vamos jogar!</h3>
       </div>
-    </>
+    </DescriptionStyled>
   );
 }

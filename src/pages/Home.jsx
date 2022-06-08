@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <Menu />
       <Description />
-      <ButtonPlay />
+      <ButtonPlay className="btn" />
     </>
   );
 }
