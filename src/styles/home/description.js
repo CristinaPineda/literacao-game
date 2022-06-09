@@ -6,8 +6,10 @@ const DescriptionStyled = styled.div`
   background-repeat: no-repeat;
   background-position: center top;
   background-size: contain;
-  width: 95%;
+  width: 99%;
   margin: auto;
+  color: 	#1C1C1C;
+  text-align: center;
 
   .divDescription {
     background-color: rgba(220,220,220,.8);
@@ -47,11 +49,13 @@ const DescriptionStyled = styled.div`
 
     h3 {
       margin-top: 0;
+      margin-bottom: .5rem;
       padding: .5rem;
     }
   }
 
   @media (max-width: 768px) {
+    width: 95%;
     background-repeat: repeat-y;
   }
 `;

@@ -4,6 +4,7 @@ const MenuStyled = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
+  background-color: white;
 
   .image_literacao {
     margin: auto;

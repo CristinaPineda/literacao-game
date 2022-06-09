@@ -5,10 +5,9 @@ const BotaoPlayStyled = styled.div`
   justify-content: center;
 
   .play {
-    width: 120px;
-    padding: 5px;
-    border-radius: 10000px;
-    border: 2px solid lightgreen;
+    width: 7.5rem;
+    padding: .1rem;
+    border: .1rem solid lightgreen;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,16 +18,17 @@ const BotaoPlayStyled = styled.div`
 
   .play:hover {
     background-color: blue;
-    border: 2px solid darkgreen;
+    border: .1rem solid darkgreen;
   }
 
   @media (max-width: 768px) {
     display: flex;
+    margin-bottom: 3rem;
     justify-content: flex-start;
+
     .play {
-      padding: 0;
-      width: 120px;
-      height: 20px;
+      padding: .1rem;
+      width: 7.5rem;
       border-radius: 0;
       border: none;
       display: flex;
@@ -37,6 +37,7 @@ const BotaoPlayStyled = styled.div`
       color: white;
       background-color: none;
       font-weight: 600;
+      margin: auto;
     }
   }
 `;
