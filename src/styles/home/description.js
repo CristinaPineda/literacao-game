@@ -46,8 +46,13 @@ const DescriptionStyled = styled.div`
     background-color: orange;
 
     h3 {
+      margin-top: 0;
       padding: .5rem;
     }
+  }
+
+  @media (max-width: 768px) {
+    background-repeat: repeat-y;
   }
 `;
 

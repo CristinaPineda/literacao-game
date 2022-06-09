@@ -17,7 +17,7 @@ export default function ButtonPlay() {
   const goGame = () => {
     return (
       <BotaoPlayStyled>
-        <a onClick={goPages} className="play">Jogar<BsFillCaretRightFill size="1.8rem" color="red"/></a>
+        <a onClick={goPages} className="play">JOGAR<BsFillCaretRightFill size="1.8rem" color="red"/></a>
       </BotaoPlayStyled>
     );
   };
