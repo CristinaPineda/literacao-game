@@ -1,8 +1,10 @@
 import React from 'react';
+import DescStyled from '../../styles/sobre/descriptionAbout';
+
 
 export default function Justification() {
   return (
-    <>
+    <DescStyled>
       <h2 className="h2Justification">
         Justificativa
       </h2>
@@ -11,7 +13,7 @@ export default function Justification() {
       </p>
       <blockquote cite="BRITO, D. S. de. A importância da leitura na formação social do indivíduo. Revela, Guarujá, v. 1, n. 8, p. 1-35, jun. 2010. Semestral. Disponível em: http://www.fals.com.br/revela. Acesso em: 09 maio 2022.">
         <p>
-            “[...] é por meio da leitura que podemos formar cidadãos críticos, uma condição indispensável para o exercício da cidadania, na medida em que torna o indivíduo capaz de compreender o significado das inúmeras vozes que se manifestam no debate social e de pronunciar-se com sua própria voz, tomando consciência de todos os seus direitos e sabendo lutar por eles”. (BRITO, 2010)
+          <i>“[...] é por meio da leitura que podemos formar cidadãos críticos, uma condição indispensável para o exercício da cidadania, na medida em que torna o indivíduo capaz de compreender o significado das inúmeras vozes que se manifestam no debate social e de pronunciar-se com sua própria voz, tomando consciência de todos os seus direitos e sabendo lutar por eles”. (BRITO, 2010)</i>
         </p>
       </blockquote>
       <p>
@@ -20,6 +22,6 @@ export default function Justification() {
       <p>
         Nesta perspectiva, este projeto busca entender qual a importância dos jogos para o ensinoaprendizagem da disciplina de Literatura para os alunos do ensino médio e como poderá facilitar o processo de aprendizagem e conhecimento.
       </p>
-    </>
+    </DescStyled>
   );
 }

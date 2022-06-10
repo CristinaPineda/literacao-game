@@ -1,8 +1,9 @@
 import React from 'react';
+import DescStyled from '../../styles/sobre/descriptionAbout';
 
 export default function Description() {
   return(
-    <>
+    <DescStyled>
       <h2 className="h2Description">Desenvolvimento do jogo</h2>
       <h3>UNIVERSIDADE VIRTUAL DO ESTADO DE SÃO PAULO</h3>
       <h3>Projeto Integrador para o curso de Licenciatura da Universidade Virtual do Estado de São Paulo (UNIVESP).</h3>
@@ -13,6 +14,6 @@ export default function Description() {
       <p>
         Através da leitura, o conhecimento é adquirido e pode, assim, ser aplicado em diversas áreas da vida humana. A leitura também traz ao leitor a possibilidade de criar suas fantasias, seu mundo, seus sonhos e seus objetivos, trazendo, muitas vezes, a leitura como vida em seu cotidiano. Outro fator importante da literatura é a preparação dos alunos do terceiro ano do Ensino Médio para o vestibular. A língua portuguesa é uma das matérias mais importantes dos vestibulares e uma das que somam as maiores pontuações, sem contar com a redação que equivale a nota total de uma prova e entra com valor completo na composição da nota final. No ano de 2010 o <i>The Nacional Literancy Trust</i>, Fundo Nacional de Alfabetização do Reino Unido, divulgou o resultado de uma pesquisa com 3 mil crianças, onde constatou-se que crianças que leem mais escrevem melhor. É sabido, também, que o sucesso de um profissional depende dos conhecimentos adquiridos no decorrer da vida dele e que grande parte deste conhecimento é adquirido através da leitura.
       </p>
-    </>
+    </DescStyled>
   );
 }
