@@ -11,6 +11,10 @@ const AboutStyled = styled.div`
   color: 	#1C1C1C;
   text-align: center;
 
+  @media (max-width: 768px) {
+    background-repeat: repeat-y;
+  }
+
   `;
 
 export default AboutStyled;
