@@ -8,12 +8,13 @@ import { HiHome } from 'react-icons/hi';
 import { AiFillBulb } from 'react-icons/ai';
 import { ImBook } from 'react-icons/im';
 import { GiHamburgerMenu } from 'react-icons/gi';
+// || pathname.includes('/ranking')
 
 export default function Menu(){
   const {pathname} = useLocation();
 
   const BtnJogar = () => {
-    if (pathname.includes('/jogo') || pathname.includes('/ranking') ) {
+    if (pathname.includes('/jogo') ) {
       return '';
     }
     return (
@@ -22,9 +23,9 @@ export default function Menu(){
   };
 
   const BtnRanking = () => {
-    if (pathname.includes('/ranking') ) {
-      return '';
-    }
+    // if (pathname.includes('/ranking') ) {
+    //   return '';
+    // }
     return (
       <ButtonRanking />
     );
