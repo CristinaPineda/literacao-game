@@ -1,5 +1,9 @@
 import React, {useContext} from 'react';
 import GameContext from '../../context/gameContext';
+import trofeu from '../../images/trofeu.png';
+import RankStyled from '../../styles/ranking/rankPage';
+import RankStyledOff from '../../styles/ranking/rankPageOff';
+import {FaMedal} from 'react-icons/fa';
 
 export default function Ranked() {
   const {listRank} = useContext(GameContext);
@@ -7,22 +11,25 @@ export default function Ranked() {
   const TopList = () => {
     if(listRank == null) {
       return (
-        <>
+        <RankStyledOff>
           <h2>Sem ranking por enquanto!!</h2>
           <p>Jogue algumas partidas e volte aqui para conferir o Top 10!</p>
-        </>
+        </RankStyledOff>
       );
     } else {
       listRank.slice(0,10);
       return (
-        <>
-          <h1 className="h1Ranking">TOP 10 - Melhores pontuações</h1>
-          <div className="divListRank">
-            <ol>
-              {listRank.map((item, id) => (<li key={id}>{item.player}: {item.score}</li>))}
-            </ol>
+        <RankStyled>
+          <div className="top">
+            <img src={trofeu} />
+            <div className="divListRank">
+              <h1 className="h1Ranking"><FaMedal size="2rem" color="orange"/><strong>TOP 10</strong> <br/>Melhores pontuações</h1>
+              <ol>
+                {listRank.map((item, id) => (<li key={id}>{item.player} pontos: {item.score}</li>))}
+              </ol>
+            </div>
           </div>
-        </>
+        </RankStyled>
       );
     }
   };
