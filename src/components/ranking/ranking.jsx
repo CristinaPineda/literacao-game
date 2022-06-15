@@ -4,6 +4,7 @@ import trofeu from '../../images/trofeu.png';
 import RankStyled from '../../styles/ranking/rankPage';
 import RankStyledOff from '../../styles/ranking/rankPageOff';
 import {FaMedal} from 'react-icons/fa';
+import {MdOutlineDoNotDisturb} from 'react-icons/md';
 
 export default function Ranked() {
   const {listRank} = useContext(GameContext);
@@ -12,8 +13,11 @@ export default function Ranked() {
     if(listRank == null) {
       return (
         <RankStyledOff>
-          <h2>Sem ranking por enquanto!!</h2>
-          <p>Jogue algumas partidas e volte aqui para conferir o Top 10!</p>
+          <MdOutlineDoNotDisturb size="8rem" color="red"/>
+          <div>
+            <h2>Sem ranking por enquanto!!</h2>
+            <p>Jogue algumas partidas e volte aqui para conferir o Top 10!</p>
+          </div>
         </RankStyledOff>
       );
     } else {
