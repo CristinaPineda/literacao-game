@@ -39,6 +39,42 @@ const RankStyled = styled.div`
       }
     }
   }
+
+  @media (max-width: 768px) {
+  background-repeat: repeat-y;
+
+  .top {
+    margin: 1rem auto;
+    display: flex;
+    height: 100vh;
+    width: 80vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 0;
+    
+    img {
+      width: 8rem;
+    }
+    
+    .divListRank {
+      height: 90vh;
+      
+      .h1Ranking {
+        color: darkslateblue;
+        text-align: center;
+      }
+      
+      ol {
+        margin-left: 1rem;
+        color: darkred;
+        font-weight: bold;
+        font-size: 1.3rem;
+        line-height: 2.5rem;
+      }
+    }
+  }
+}
 `;
 
 export default RankStyled;

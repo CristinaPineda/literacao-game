@@ -89,8 +89,6 @@ const MenuStyled = styled.div`
       }
     }
 
-
-
     .image_literacao {
       text-align: center;
       img {
