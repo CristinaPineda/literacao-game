@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import GameContext from '../../../context/gameContext';
-import DivStyled from '../../../styles/jogo/equipes/listaEquipes';
+import {DivStyled, InputStyled} from '../../../styles/jogo/jogador/player';
 import Score from '../score/score';
 
 export default function Player() {
@@ -23,10 +23,10 @@ export default function Player() {
 
   const renderForm = () => {
     return (
-      <>
+      <InputStyled>
         <input disabled={inputOn} type="text" placeholder="Digite seu nome aqui:" onChange={handleChangeInput}/>
-        <button disabled={btn} onClick={disabledInput}>Ok</button>
-      </>
+        <button disabled={btn} onClick={disabledInput}>OK</button>
+      </InputStyled>
     );
   };
 
