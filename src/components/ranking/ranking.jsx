@@ -29,7 +29,7 @@ export default function Ranked() {
             <div className="divListRank">
               <h1 className="h1Ranking"><FaMedal size="2rem" color="orange"/><strong>TOP 10</strong> <br/>Melhores pontuações</h1>
               <ol>
-                {listRank.map((item, id) => (<li key={id}>{item.player} pontos: {item.score}</li>))}
+                {listRank.map((item, id) => (<li key={id}>{item.player} {item.score} pontos</li>))}
               </ol>
             </div>
           </div>
