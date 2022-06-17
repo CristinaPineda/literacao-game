@@ -5,6 +5,7 @@ import RankStyled from '../../styles/ranking/rankPage';
 import RankStyledOff from '../../styles/ranking/rankPageOff';
 import {FaMedal} from 'react-icons/fa';
 import {MdOutlineDoNotDisturb} from 'react-icons/md';
+import {IoDiamondOutline} from 'react-icons/io5';
 
 export default function Ranked() {
   const {listRank} = useContext(GameContext);
@@ -29,7 +30,7 @@ export default function Ranked() {
             <div className="divListRank">
               <h1 className="h1Ranking"><FaMedal size="2rem" color="orange"/><strong>TOP 10</strong> <br/>Melhores pontuações</h1>
               <ol>
-                {listRank.map((item, id) => (<li key={id}>{item.player} {item.score} pontos</li>))}
+                {listRank.map((item, id) => (<li key={id}>{item.player} <IoDiamondOutline color="gray"/> {item.score} pontos</li>))}
               </ol>
             </div>
           </div>
