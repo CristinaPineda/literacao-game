@@ -105,14 +105,19 @@ export default function Game() {
     return (
       <DivJogosStyled>
         <div className="divPontos">
-          <p>Pontos da questão: {pontos}</p>
-        </div>
-        <div>
-          <button disabled={btnJogar} onClick={handleClick}>Jogar</button>
-          <button disabled={btnDicas} onClick={handleClickDicas} className="maisDicas">+</button>
-          { btnJogar == true? listMap(): ''}
-        </div>
+          <div>
+            <p>Pontos da questão: {pontos}</p>
+          </div>
+          <div className="btns">
+            <button className="btn1" disabled={btnJogar} onClick={handleClick}>JOGAR</button>
+            <div className="dcs">
+              <label htmlFor="dicas">dicas</label>
+              <button id="dicas" disabled={btnDicas} onClick={handleClickDicas} className="maisDicas">+</button>
+            </div>
+          </div>
+        </div> 
         <div className="region">
+          { btnJogar == true? listMap(): ''}
           {btnJogar && nextQuestion? <Region questionEquipe={questionEquipe}/>: ''}
         </div>
         <div className="divResposta">
