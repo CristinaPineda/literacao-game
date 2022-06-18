@@ -92,6 +92,26 @@ const DivJogosStyled = styled.div`
     }
   }
 
+  .region {
+    display: flex;
+    margin: 10px auto;
+    background-color: rgb(220,220,220);
+    width: 80%;
+    border: 5px double orange;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    ol {
+      width: 50%;
+    }
+
+    li {
+      color: rgb(25,25,112);
+      line-height: 2rem;
+    }
+  }
+
   @media (max-width: 768px) {
     .divPontos {
       flex-direction: column-reverse;
@@ -111,6 +131,16 @@ const DivJogosStyled = styled.div`
             width: 40%;
           }
         }
+      }
+    }
+
+    .region {
+      flex-direction: column-reverse;
+      width: 90%;
+
+      ol {
+        width: 90%;
+        padding: 0 30px;
       }
     }
   }

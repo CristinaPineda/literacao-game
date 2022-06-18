@@ -4,6 +4,7 @@ import DivJogosStyled from '../../../styles/jogo/jogos/jogos';
 import Region from './region';
 import NextGame from './nextGame';
 import Correct from './correct';
+import {HiOutlineLightBulb} from 'react-icons/hi';
 
 export default function Game() {
   const { question, score, setScore, setOk} = useContext(GameContext);
@@ -28,9 +29,9 @@ export default function Game() {
   
   const listMap = () => {
     return (
-      <ul>
-        {listDicas.map(item => (<li key={item}>{item}</li>))}
-      </ul>
+      <ol>
+        {listDicas.map(item => (<li key={item}><HiOutlineLightBulb size="1.5rem" color="orange"/>{item}</li>))}
+      </ol>
     );
   };
 
@@ -117,7 +118,7 @@ export default function Game() {
           </div>
         </div> 
         <div className="region">
-          { btnJogar == true? listMap(): ''}
+          {btnJogar == true? listMap(): ''}
           {btnJogar && nextQuestion? <Region questionEquipe={questionEquipe}/>: ''}
         </div>
         <div className="divResposta">

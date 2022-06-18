@@ -6,6 +6,7 @@ import nordeste from '../../../images/nordeste.png';
 import sudeste from '../../../images/sudeste.png';
 import sul from '../../../images/sul.png';
 import centroOeste from '../../../images/centro-oeste.png';
+import DivRegionStyled from '../../../styles/jogo/jogos/region';
 
 export default function Region(props) {
   const {question} = useContext(GameContext);
@@ -38,10 +39,10 @@ export default function Region(props) {
   
   const Images = () => {
     return(
-      <>
+      <DivRegionStyled>
         <p>Referência regional: {region}</p>
         {imageRegion()}
-      </>
+      </DivRegionStyled>
     );
   };
 
