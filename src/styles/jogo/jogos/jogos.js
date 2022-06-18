@@ -112,6 +112,50 @@ const DivJogosStyled = styled.div`
     }
   }
 
+  .divResposta {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: flex-start;
+    align-items: center;
+
+    .resp {
+      display: flex;
+      width: 60%;
+      
+      .inputResposta {
+        width: 60%;
+        height: 1.5rem;
+        background-color: lightblue;
+        border: 3px solid purple;
+        border-radius: 5px;
+        margin-right: 0.315rem;
+      }
+      
+      button {
+        background-color: blue;
+        border: 3px solid purple; 
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+      }
+      
+      button:hover {
+        background-color: lightblue;
+        border: 3px solid darkpurple;
+        color: purple;
+      }
+
+      button:disabled {
+        background-color: gray;
+        color: white;
+        border: 3px solid darkgray;
+        border-radius: 5px;
+        font-weight: normal;
+      }
+    }
+  }
+
   @media (max-width: 768px) {
     .divPontos {
       flex-direction: column-reverse;
@@ -141,6 +185,19 @@ const DivJogosStyled = styled.div`
       ol {
         width: 90%;
         padding: 0 30px;
+      }
+    }
+
+    .divResposta {
+      flex-direction: column;
+      width: 90%;
+
+      .resp {
+        width: 100%;
+
+        .inputResposta {
+          width: 100%;
+        }
       }
     }
   }

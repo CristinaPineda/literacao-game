@@ -122,8 +122,10 @@ export default function Game() {
           {btnJogar && nextQuestion? <Region questionEquipe={questionEquipe}/>: ''}
         </div>
         <div className="divResposta">
-          <input disabled={inputRes} type="text" className="inputResposta" placeholder="Digite sua resposta aqui:" onChange={handleChangeInput} value={input}/>
-          <button disabled={btnResponse} className="btnResposta" onClick={verifyResponse}>Responder</button>
+          <div className="resp">
+            <input disabled={inputRes} type="text" className="inputResposta" placeholder="Digite sua resposta aqui:" onChange={handleChangeInput} value={input}/>
+            <button disabled={btnResponse} className="btnResposta" onClick={verifyResponse}>Responder</button>
+          </div>
           <Correct responseQuestion={resp} />
         </div>
         <div className="divNextEquipe">
