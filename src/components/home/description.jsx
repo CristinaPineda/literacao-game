@@ -10,10 +10,10 @@ export default function Description() {
         Literação, em sua forma original, é um jogo de tabuleiro, cujo objetivo educacional é auxiliar no processo de ensino-aprendizagem da Literatura Brasileira.
         </p>
         <p>
-        O aluno tem que descobrir qual escritor, obra literária ou estilo literário foi sorteado por meio de dicas. Entre as divas estão incluídas curiosidades sobre a Literatura Brasileira.
+        O aluno tem que descobrir qual escritor, obra literária ou estilo literário foi sorteado por meio de dicas. Entre as dicas estão incluídas curiosidades sobre a Literatura Brasileira.
         </p>
         <p>
-        Na versão online, o jogo escolhe aleatoriamente 5 questões no banco de dados (o mesmo utilizado na versão do tabuleiro) e o aluno tem a chance de descobrir a resposta através de 10 dias em cada questão.
+        Na versão online, o jogo escolhe aleatoriamente 5 questões no banco de dados (o mesmo utilizado na versão do tabuleiro) e o aluno tem a chance de descobrir a resposta através de 10 dicas em cada questão.
         </p>
       </div>
       <div className="divRules">
