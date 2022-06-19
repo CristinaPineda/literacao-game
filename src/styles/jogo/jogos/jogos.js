@@ -131,6 +131,14 @@ const DivJogosStyled = styled.div`
         border-radius: 5px;
         margin-right: 0.315rem;
       }
+
+      .inputResposta:disabled {
+        background-color: gray;
+        color: white;
+        border: 3px solid darkgray;
+        border-radius: 5px;
+        font-weight: normal;
+      }
       
       button {
         background-color: blue;
