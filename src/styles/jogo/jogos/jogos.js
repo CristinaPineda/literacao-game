@@ -58,7 +58,7 @@ const DivJogosStyled = styled.div`
         width: 30%;
         
         label {
-          margin-right: 8px;
+          margin-right: .5rem;
           color: darkred;
         }
 
@@ -94,7 +94,7 @@ const DivJogosStyled = styled.div`
 
   .region {
     display: flex;
-    margin: 10px auto;
+    margin: .625rem auto;
     background-color: rgb(220,220,220);
     width: 80%;
     border: 5px double orange;
@@ -156,6 +156,36 @@ const DivJogosStyled = styled.div`
     }
   }
 
+  .divNextQuestion {
+    width: 80%;
+    margin: .938rem auto;
+
+    .btnNext {
+      background-color: green;
+      border: 3px solid lime; 
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      height: 2rem;
+      width: 20rem;
+      }
+      
+      .btnNext:hover {
+        background-color: lime;
+        border: 3px solid green;
+        color: black;
+      }
+
+      .btnNext:disabled {
+        background-color: gray;
+        color: white;
+        border: 3px solid darkgray;
+        border-radius: 5px;
+        font-weight: normal;
+      }
+    }
+  
+
   @media (max-width: 768px) {
     .divPontos {
       flex-direction: column-reverse;
@@ -163,7 +193,7 @@ const DivJogosStyled = styled.div`
 
       .btns {
         width: 90%;
-        margin: 10px auto;
+        margin: .625rem auto;
         justify-content: space-around;
 
         .dcs {
@@ -184,7 +214,7 @@ const DivJogosStyled = styled.div`
 
       ol {
         width: 90%;
-        padding: 0 30px;
+        padding: 0 1.875rem;
       }
     }
 
@@ -198,6 +228,19 @@ const DivJogosStyled = styled.div`
         .inputResposta {
           width: 100%;
         }
+      }
+    }
+
+    .divNextQuestion {
+      margin: 0 auto 1.25rem;
+
+      .btnNext {
+        width: 100%;
+        margin: auto;
+      }
+
+      .btnNext:disabled {
+        margin: 1.25rem auto;
       }
     }
   }

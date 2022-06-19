@@ -128,7 +128,7 @@ export default function Game() {
           </div>
           <Correct responseQuestion={resp} />
         </div>
-        <div className="divNextEquipe">
+        <div className="divNextQuestion">
           {questionEquipe <= 4? newQuestion() : <NextGame />}
         </div>
       </DivJogosStyled>

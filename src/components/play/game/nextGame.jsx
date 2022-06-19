@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 import GameContext from '../../../context/gameContext';
+import DivNextGameStyled from '../../../styles/jogo/jogos/nextGame';
 
 export default function NextGame() {
   const {setOk, player, score, setScore} = useContext(GameContext);
@@ -21,7 +22,9 @@ export default function NextGame() {
 
   const Game = () => {
     return (
-      <button onClick={goHome} className="btnNextGame">Jogar novamente</button>
+      <DivNextGameStyled>
+        <button onClick={goHome} className="btnNextGame">JOGAR NOVAMENTE</button>
+      </DivNextGameStyled>
     );
   };
 
