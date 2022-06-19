@@ -186,7 +186,7 @@ const DivJogosStyled = styled.div`
     }
   
 
-  @media (max-width: 768px) {
+  @media (max-width: 820px) {
     .divPontos {
       flex-direction: column-reverse;
       width: 90%;

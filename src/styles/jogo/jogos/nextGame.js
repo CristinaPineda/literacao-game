@@ -22,7 +22,7 @@ const DivNextGameStyled = styled.div`
     color: darkred;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 820px) {
     .btnNextGame {
       width: 90%;
     }

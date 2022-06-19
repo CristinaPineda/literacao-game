@@ -21,7 +21,7 @@ const BotaoPlayStyled = styled.div`
     border: .1rem solid darkgreen;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 820px) {
     display: flex;
     margin-bottom: 3rem;
     justify-content: flex-start;

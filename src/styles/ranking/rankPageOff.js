@@ -18,7 +18,7 @@ const RankStyledOff = styled.div`
     font-size: 1.5rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 820px) {
     flex-direction: column;
     align-items: center;
 

@@ -11,7 +11,7 @@ const DivCorrectStyled = styled.div`
     margin-left: 40px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 820px) {
     display: flex;
     flex-direction: column;
 

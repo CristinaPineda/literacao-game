@@ -22,7 +22,7 @@ const StudentStyled = styled.div`
     font-weight: 600;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 820px) {
     text-align: center;
     padding: .5rem 0;
 

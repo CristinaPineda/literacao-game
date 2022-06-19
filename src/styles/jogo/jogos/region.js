@@ -16,7 +16,7 @@ const DivRegionStyled = styled.div`
     width: 350px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 820px) {
     align-items: center;
     flex-direction: column;
     margin: auto;

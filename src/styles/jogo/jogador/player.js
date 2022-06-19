@@ -56,7 +56,7 @@ export const InputStyled = styled.div`
     color: purple;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 820px) {
     input {
       width: 75%;
     }

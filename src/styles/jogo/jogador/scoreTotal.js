@@ -5,7 +5,7 @@ const ScoreStyled = styled.div`
     color: gold;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 820px) {
     h1 {
       margin-bottom: 0;
     }
